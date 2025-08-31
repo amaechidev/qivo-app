@@ -13,8 +13,6 @@ import {
   ArrowRight,
   CheckCircle,
   Users,
-  Clock,
-  Share2,
 } from "lucide-react";
 
 interface DemoPollOption {
@@ -170,7 +168,7 @@ export default function Home() {
                   <BarChart3 className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-white">
-                  What's the best time to be productive?
+                  What&apos;s the best time to be productive?
                 </h3>
                 <p className="text-gray-400">
                   Click an option to see live results!
@@ -178,7 +176,7 @@ export default function Home() {
               </div>
 
               <div className="space-y-4">
-                {demoPollOptions.map((option, index) => (
+                {demoPollOptions.map((option) => (
                   <div
                     key={option.id}
                     className={`cursor-pointer bg-white/10 hover:bg-white/20 rounded-xl p-4 transition-all duration-300 group ${
@@ -428,7 +426,7 @@ export default function Home() {
                     <BarChart3 className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">
-                    What's the best time to be productive?
+                    What&apos;s the best time to be productive?
                   </h3>
                   <p className="text-gray-400">
                     Click an option to see live results!
@@ -436,7 +434,7 @@ export default function Home() {
                 </div>
 
                 <div className="space-y-4">
-                  {demoPollOptions.map((option, index) => (
+                  {demoPollOptions.map((option) => (
                     <div
                       key={option.id}
                       className={`cursor-pointer bg-white/10 hover:bg-white/20 rounded-xl p-4 transition-all duration-300 group ${
