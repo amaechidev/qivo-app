@@ -2,17 +2,41 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { supabase } from '@/lib/supabase'; // Import the Supabase client
 
 export default function RegisterPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState<string | null>(null); // State for error messages
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Registration logic will go here
-    console.log('Registration attempt with:', { name, email, password });
+    setError(null); // Clear previous errors
+
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
+
+    // Supabase registration logic
+    const { error: signUpError } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: { name }, // Store name in user metadata
+      },
+    });
+
+    if (signUpError) {
+      setError(signUpError.message);
+      return;
+    }
+
+    router.push('/login?message=Check your email to verify your account');
   };
 
   return (
@@ -23,6 +47,7 @@ export default function RegisterPage() {
             Create your account
           </h2>
         </div>
+        {error && <p className="mt-2 text-center text-sm text-red-600">{error}</p>}
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4 rounded-md shadow-sm">
             <div>
