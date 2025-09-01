@@ -144,7 +144,7 @@ export default function Home() {
         </div>
       </nav>
       {/* Theme Toggle */}
-      <div className="fixed top-6 right-6 z-50">
+      {/* <div className="fixed top-6 right-6 z-50">
         <Button
           variant="outline"
           size="sm"
@@ -157,7 +157,8 @@ export default function Home() {
         >
           {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
         </Button>
-      </div>
+      </div> */}
+      
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
