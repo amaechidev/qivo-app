@@ -105,7 +105,7 @@ export default function CreatePoll() {
         title: "Success",
         description: "Poll created successfully!",
       });
-      router.push(`/poll/${poll.id}/results`);
+      router.push(`/polls/${poll.id}/results`);
     },
     onError: (error) => {
       console.error("Create poll error:", error);

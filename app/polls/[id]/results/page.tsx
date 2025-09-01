@@ -124,7 +124,7 @@ export default function Results() {
   // console.log("creator:", );
 
   const copyLink = async () => {
-    const link = `${window.location.origin}/poll/${id}`;
+    const link = `${window.location.origin}/polls/${id}`;
     try {
       await navigator.clipboard.writeText(link);
       toast({
@@ -142,7 +142,7 @@ export default function Results() {
   };
 
   const shareResults = async () => {
-    const link = `${window.location.origin}/poll/${id}/results`;
+    const link = `${window.location.origin}/polls/${id}/results`;
     try {
       if (navigator.share) {
         await navigator.share({
@@ -471,7 +471,7 @@ export default function Results() {
                   Be the first to vote on this poll!
                 </p>
                 <Button
-                  onClick={() => router.push(`/poll/${id}`)}
+                  onClick={() => router.push(`/polls/${id}`)}
                   data-testid="button-vote"
                 >
                   Cast Your Vote
@@ -522,7 +522,7 @@ export default function Results() {
               <div className="mt-6 text-center">
                 <Button
                   variant="outline"
-                  onClick={() => router.push(`/poll/${id}`)}
+                  onClick={() => router.push(`/polls/${id}`)}
                   data-testid="button-vote-again"
                 >
                   Vote on This Poll

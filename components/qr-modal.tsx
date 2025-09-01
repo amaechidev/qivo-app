@@ -23,7 +23,7 @@ interface QRModalProps {
 export default function QRModal({ isOpen, onClose, pollId }: QRModalProps) {
   const { toast } = useToast();
   const [qrCodeUrl, setQrCodeUrl] = useState<string>("");
-  const pollUrl = `${window.location.origin}/poll/${pollId}`;
+  const pollUrl = `${window.location.origin}/polls/${pollId}`;
 
   useEffect(() => {
     if (isOpen) {

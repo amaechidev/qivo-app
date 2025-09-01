@@ -201,7 +201,7 @@ export default function PollCard({ poll }: PollCardProps) {
   });
 
   const copyLink = async () => {
-    const link = `${window.location.origin}/poll/${poll.id}`;
+    const link = `${window.location.origin}/polls/${poll.id}`;
     try {
       await navigator.clipboard.writeText(link);
       toast({
@@ -335,7 +335,7 @@ export default function PollCard({ poll }: PollCardProps) {
         className={`shadow-sm border border-border card-hover overflow-hidden cursor-pointer ${
           !isActive ? "opacity-75" : ""
         }`}
-        onClick={() => router.push(`/poll/${poll.id}/results`)}
+        onClick={() => router.push(`/polls/${poll.id}/results`)}
         data-testid={`card-poll-${poll.id}`}
       >
         <CardContent className="p-6">
@@ -391,7 +391,7 @@ export default function PollCard({ poll }: PollCardProps) {
                 <DropdownMenuItem
                   onClick={(e) => {
                     e.stopPropagation();
-                    router.push(`/poll/${poll.id}/results`);
+                    router.push(`/polls/${poll.id}/results`);
                   }}
                 >
                   <BarChart3 className="w-4 h-4 mr-2" />
@@ -523,7 +523,7 @@ export default function PollCard({ poll }: PollCardProps) {
                 className="text-muted-foreground hover:text-foreground transition-colors p-1"
                 onClick={(e) => {
                   e.stopPropagation();
-                  router.push(`/poll/${poll.id}/results`);
+                  router.push(`/polls/${poll.id}/results`);
                 }}
                 title="Analytics"
                 aria-label="View analytics"

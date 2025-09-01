@@ -71,7 +71,7 @@ export default function PublicPolls() {
   });
 
   const handlePollClick = (pollId: string) => {
-    router.push(`/poll/${pollId}`);
+    router.push(`/${pollId}`);
   };
 
   const getSortLabel = (option: SortOption) => {

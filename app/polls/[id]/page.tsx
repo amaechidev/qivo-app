@@ -396,7 +396,7 @@ export default function Vote() {
 
       // Redirect to results after a short delay
       setTimeout(() => {
-        router.push(`/poll/${id}/results`);
+        router.push(`/polls/${id}/results`);
       }, 1500);
     },
     onError: (error) => {
@@ -475,7 +475,7 @@ export default function Vote() {
               This poll is no longer accepting votes.
             </p>
             <Button
-              onClick={() => router.push(`/poll/${id}/results`)}
+              onClick={() => router.push(`/polls/${id}/results`)}
               data-testid="button-results"
             >
               View Results
@@ -500,7 +500,7 @@ export default function Vote() {
               You have already cast your vote for this poll.
             </p>
             <Button
-              onClick={() => router.push(`/poll/${id}/results`)}
+              onClick={() => router.push(`/polls/${id}/results`)}
               data-testid="button-view-results"
             >
               View Results
